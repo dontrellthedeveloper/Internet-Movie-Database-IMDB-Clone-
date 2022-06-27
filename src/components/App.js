@@ -1,14 +1,21 @@
 import React from 'react';
-import Header from './elements/Header';
-import Home from "./Home";
-import {GlobalStyle} from "./styles/GlobalStyle";
+import { Routes, Route, Link } from "react-router-dom";
 
+import Header from './elements/Header';
+import Home from './Home';
+import Movie from './Movie';
+import NotFound from './NotFound';
+
+import { GlobalStyle } from './styles/GlobalStyle';
 
 const App = () => (
     <>
-        <Header/>
-        <Home/>
-        <GlobalStyle/>
+        <Header />
+        <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path="/:movieId" element={<Movie/>} />
+        </Routes>
+        <GlobalStyle />
     </>
 )
 
